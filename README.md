@@ -1,1 +1,1 @@
-# FPGA
+Studying for FPGA with verilog
