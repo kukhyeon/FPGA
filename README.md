@@ -1,1 +1,1 @@
-Studying for FPGA with verilog
+Studying for FPGA with verilog HDL
