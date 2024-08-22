@@ -1,1 +1,1 @@
-Studying FPGA with verilog HDL
+단순 기록용
