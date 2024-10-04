@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Tue Oct  1 21:17:42 2024
+// Date        : Fri Oct  4 13:04:09 2024
 // Host        : DESKTOP-135RQ3N running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode funcsim -nolib -force -file {C:/Users/namkukhyeon/Documents/FPGA/FPGA
-//               Lab/Boolean/Boolean.sim/sim_1/synth/func/xsim/tb_boolean_func_synth.v}
+//               Lab/Homework1/Boolean/Boolean.sim/sim_1/synth/func/xsim/tb_boolean_func_synth.v}
 // Design      : Boolean
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -45,11 +45,11 @@ module Boolean
        (.I(Y_OBUF),
         .O(Y));
   LUT3 #(
-    .INIT(8'hF8)) 
+    .INIT(8'hC2)) 
     Y_OBUF_inst_i_1
-       (.I0(B_IBUF),
-        .I1(A_IBUF),
-        .I2(C_IBUF),
+       (.I0(A_IBUF),
+        .I1(C_IBUF),
+        .I2(B_IBUF),
         .O(Y_OBUF));
 endmodule
 `ifndef GLBL
