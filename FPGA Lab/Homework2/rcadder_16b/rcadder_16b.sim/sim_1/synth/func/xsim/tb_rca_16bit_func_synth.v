@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sat Oct  5 16:42:58 2024
+// Date        : Sat Oct  5 23:10:11 2024
 // Host        : DESKTOP-135RQ3N running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode funcsim -nolib -force -file {C:/Users/namkukhyeon/Documents/FPGA/FPGA
 //               Lab/Homework2/rcadder_16b/rcadder_16b.sim/sim_1/synth/func/xsim/tb_rca_16bit_func_synth.v}

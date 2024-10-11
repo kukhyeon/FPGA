@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sat Oct  5 22:10:11 2024
+// Date        : Sun Oct  6 18:59:13 2024
 // Host        : DESKTOP-135RQ3N running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode funcsim -nolib -force -file {C:/Users/namkukhyeon/Documents/FPGA/FPGA
 //               Lab/Homework2/add_sub/add_sub.sim/sim_1/synth/func/xsim/alu_mini_tb_func_synth.v}
