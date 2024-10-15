@@ -8,7 +8,7 @@ module BCLL2(
     output Cout  
     );
     assign C = (Gin[0] | (Pin[0] & Cin));
-    assign Gout = (Gin[1] | Pin[1] & Gin[0] | Pin[1] & Pin[0] & Cin);
+    assign Gout = (Gin[1] | (Pin[1] & Gin[0]));
     assign Pout = (Pin[1] & Pin[0]);
     assign Cout = Gout | (Pout & Cin);
 
