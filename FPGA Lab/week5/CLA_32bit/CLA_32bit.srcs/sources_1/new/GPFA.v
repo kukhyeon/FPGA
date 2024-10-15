@@ -5,6 +5,6 @@ module GPFA (
 
 assign G = A&B;
 assign P = A^B;
-assign Sim = P ^ Cin;
+assign Sum = P ^ Cin;
     
 endmodule
