@@ -17,12 +17,10 @@ module hex2ssd(
             4'h7    :   seg = 7'h07;
             4'h8    :   seg = 7'h7f;
             4'h9    :   seg = 7'h67;
-            4'ha    :   seg = 7'h77;
-            4'hb    :   seg = 7'h7c;
-            4'hc    :   seg = 7'h39;
-            4'hd    :   seg = 7'h5e;
-            4'he    :   seg = 7'h79;
-            4'hf    :   seg = 7'h71;
+
+            default : begin
+                seg = 7'h00;
+            end
         endcase
     end
 endmodule
