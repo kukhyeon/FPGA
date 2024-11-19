@@ -1,3 +1,4 @@
+
 module freq_divider #(parameter DIVISOR = 1)(
     input clk_in,
     input rst,
