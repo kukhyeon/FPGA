@@ -12,7 +12,10 @@ module password_manager(
     input ok,         // 스위치 입력
     output reg success,
     output [6:0] ssd,
-    output seg_en
+    output seg_en,
+    output reg [3:0] led,     // LED 출력 추가
+    output reg led6_r,        // RGB LED6 빨간색 채널
+    output reg led6_g        // RGB LED6 초록색 채널
     );
 
     reg [1:0] current_digit;
@@ -89,7 +92,28 @@ module password_manager(
             digits[2] <= 4'd0;
             digits[1] <= 4'd0;
             digits[0] <= 4'd0;
+            led <= 4'b0000;          // LED 초기화
+            led6_r <= 1'b0;          // RGB LED6 초기화
+            led6_g <= 1'b0;
         end else begin
+            case (current_digit)
+                2'd0: led <= 4'b0001;
+                2'd1: led <= 4'b0010;
+                2'd2: led <= 4'b0100;
+                2'd3: led <= 4'b1000;
+                default: led <= 4'b0000;
+            endcase
+
+            // place_sync에 따라 RGB LED6 제어
+            if (place_sync) begin
+                // place_sync가 1이면 초록색 표시
+                led6_r <= 1'b0;
+                led6_g <= 1'b1;
+            end else begin
+                // place_sync가 0이면 빨간색 표시
+                led6_r <= 1'b1;
+                led6_g <= 1'b0;
+            end
             case (mode)
                 2'd0: begin
                     success <= 1'b0;

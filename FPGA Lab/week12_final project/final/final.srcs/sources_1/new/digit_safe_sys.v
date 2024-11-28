@@ -10,7 +10,10 @@ module digit_safe_sys(
     input ok,
     input pw_endset,
     output [6:0] ssd,        
-    output      seg_en
+    output      seg_en,
+    output [3:0] led,      
+    output led6_r,        
+    output led6_g        
     );
 
     wire clk_25_2M;
@@ -30,7 +33,10 @@ module digit_safe_sys(
         .ok(ok),
         .success(success),
         .ssd(ssd),
-        .seg_en(seg_en)
+        .led(led),          
+        .seg_en(seg_en),
+        .led6_r(led6_r),   
+        .led6_g(led6_g)
     );
     //assign success_led = success;
 endmodule
