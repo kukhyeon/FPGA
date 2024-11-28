@@ -5,10 +5,10 @@ module debouncer(
     output reg clean
     );
 
-    reg [15:0] count;
+    reg [18:0] count;
     reg state;
 
-    parameter N = 16'h0FFF; // 디바운싱 시간 조정을 위한 파라미터
+    parameter N = 18'd249999; // 디바운싱 시간 조정을 위한 파라미터
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin

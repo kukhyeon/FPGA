@@ -20,9 +20,7 @@ module dec2ssd_top(
         .dec(digit2),
         .seg(ssd2)
     );
-
-
-    /*
+    
     // 클럭 분주기 추가
     reg [15:0] clk_div_counter;
     always @(posedge clk or posedge rst) begin
@@ -43,6 +41,5 @@ module dec2ssd_top(
     end
 
     assign ssd = (seg_en) ? ssd1 : ssd2;
-    */
-    
+
 endmodule
