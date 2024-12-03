@@ -10,7 +10,6 @@ module password_manager(
     input place,      // 스위치 입력
     input pw_endset,  // 버튼 입력
     input ok,         // 스위치 입력
-    output reg success,
     output [6:0] ssd,
     output seg_en,
     output reg [3:0] led,     // LED 출력 추가
@@ -22,7 +21,6 @@ module password_manager(
     reg [1:0] current_digit;
     reg [3:0] digits [3:0];
     reg [15:0] set_password;
-    reg [15:0] entered_password;
 
     // 버튼 입력에 대한 디바운싱 및 엣지 검출
     wire up_deb, down_deb, slide_deb, pw_endset_deb;
@@ -90,8 +88,6 @@ module password_manager(
             mode <= 2'd0;
             current_digit <= 2'd0;
             set_password <= 16'd0;
-            entered_password <= 16'd0;
-            success <= 1'b0;
             digits[3] <= 4'd0;
             digits[2] <= 4'd0;
             digits[1] <= 4'd0;
@@ -130,7 +126,6 @@ module password_manager(
             end
             case (mode)
                 2'd0: begin
-                    success <= 1'b0;
                     if (pw_set_edge) begin
                         mode <= 2'd1;
                         current_digit <= 2'd0;
@@ -179,12 +174,9 @@ module password_manager(
                         else
                             digits[current_digit] <= 4'd9;
                     end else if (ok_edge) begin
-                        entered_password <= {digits[3], digits[2], digits[1], digits[0]};
-                        if (entered_password == set_password) begin
-                            success <= 1'b1;
+                        if ({digits[3], digits[2], digits[1], digits[0]} == set_password) begin
                             vga_status <= 2'd1; // VGA 화면을 초록색으로 변경
                         end else
-                            success <= 1'b0;
                             vga_status <= 2'd2; // VGA 화면을 빨간색으로 변경
                         mode <= 2'd0;
                         digits[3] <= 4'd0;

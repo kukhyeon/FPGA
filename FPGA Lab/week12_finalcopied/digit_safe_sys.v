@@ -24,7 +24,6 @@ module digit_safe_sys(
     wire clk_25_2M;
     clk_gen_25M u0 (.clk_ref(clk_ref), .rst(rst), .clk_out(clk_25_2M));  
 
-    wire success;
     wire [1:0] vga_status;
 
     password_manager pw_manager (
@@ -37,7 +36,6 @@ module digit_safe_sys(
         .place(place),
         .pw_endset(pw_endset),
         .ok(ok),
-        .success(success),
         .ssd(ssd),
         .led(led),          
         .seg_en(seg_en),
@@ -46,7 +44,6 @@ module digit_safe_sys(
         .vga_status(vga_status)
     );
     
-    // VGA 패턴 생성기 인스턴스
     pattern_gen vga_inst (
         .clk(clk_25_2M),
         .reset_n(~rst),
