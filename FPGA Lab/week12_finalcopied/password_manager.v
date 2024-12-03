@@ -176,13 +176,14 @@ module password_manager(
                     end else if (ok_edge) begin
                         if ({digits[3], digits[2], digits[1], digits[0]} == set_password) begin
                             vga_status <= 2'd1; // VGA 화면을 초록색으로 변경
+                            mode <= 2'd0;
                         end else
                             vga_status <= 2'd2; // VGA 화면을 빨간색으로 변경
-                        mode <= 2'd0;
                         digits[3] <= 4'd0;
                         digits[2] <= 4'd0;
                         digits[1] <= 4'd0;
                         digits[0] <= 4'd0;
+                        current_digit <= 2'd0;
                     end
                 end
                 default: mode <= 2'd0;
