@@ -6,8 +6,8 @@ module dec2ssd_top(
     output reg seg_en
     );
 
-    wire [3:0] digit1 = number[7:4]; // number�� ���� 4��Ʈ
-    wire [3:0] digit2 = number[3:0]; // number�� ���� 4��Ʈ
+    wire [3:0] digit1 = number[7:4]; 
+    wire [3:0] digit2 = number[3:0];
 
     wire [6:0] ssd1, ssd2;
 
@@ -21,7 +21,6 @@ module dec2ssd_top(
         .seg(ssd2)
     );
     
-    // Ŭ�� ���ֱ� �߰�
     reg [15:0] clk_div_counter;
     always @(posedge clk or posedge rst) begin
         if (rst)
@@ -30,9 +29,8 @@ module dec2ssd_top(
             clk_div_counter <= clk_div_counter + 1;
     end
 
-    wire slow_clk = clk_div_counter[15]; // ���ֵ� Ŭ��
+    wire slow_clk = clk_div_counter[15]; 
 
-    // ���ֵ� Ŭ���� ����Ͽ� seg_en�� ssd ����
     always @(posedge slow_clk or posedge rst) begin
         if (rst)
             seg_en <= 1'b0;

@@ -70,48 +70,39 @@ module digital_safe_sys_tb;
         rst = 0;
         
         // 비밀번호 설정 모드로 진입
-        #100000;
+        #150000;
         pw_set_pulse();
         
         // 첫 번째 자리 숫자 설정 (예: 1)
         #150000;
         up_pulse();
-        // 95ms
         #50000;
         slide_pulse(); // 다음 자리로 이동
-        // 140ms
-        #100000; // 150ms
+        #100000; 
         
-        // 두 번째 자리 숫자 설정 (예: 2)
+        // 두 번째 자리 숫자 설정 (예: 1)
         up_pulse(); // 비밀번호 0011
-        // 190ms
-        #100000; // 200ms
+        #100000; 
         
         // 비밀번호 설정 완료
         pw_endset_pulse();
-        // 220ms
-        #50000; // 225ms
+        #50000;
 
         // 비밀번호 입력 시도 (정확한 비밀번호 입력)
         // 첫 번째 자리 숫자 입력 (1)
         up_pulse();
-        // 265ms
-        #100000; // 275ms
+        #100000; 
         slide_pulse();
-        // 315ms
         
         
-        // 두 번째 자리 숫자 입력 (2)
-        #100000; // 325ms
+        // 두 번째 자리 숫자 입력 (1)
+        #100000; 
         up_pulse();
-        // 365ms
-        #100000; // 375ms
+        #100000; 
         ok_pulse();
-        // 415ms
-        #100000 // 425ms
+        #100000 
         // place test;
         place_pulse();
-        // 465ms
         
         // 시뮬레이션 종료
         #2000000;
@@ -130,7 +121,7 @@ module digital_safe_sys_tb;
     task up_pulse;
         begin
             up = 1;
-            #40000000; // 40ms 동안 신호 유지
+            #51000000; // 51ms 동안 신호 유지
             up = 0;
         end
     endtask
@@ -138,7 +129,7 @@ module digital_safe_sys_tb;
     task down_pulse;
         begin
             down = 1;
-            #40000000;
+            #51000000; // 51ms 동안 신호 유지
             down = 0;
         end
     endtask
@@ -146,7 +137,7 @@ module digital_safe_sys_tb;
     task slide_pulse;
         begin
             slide = 1;
-            #40000000;
+            #51000000; // 51ms 동안 신호 유지
             slide = 0;
         end
     endtask
@@ -154,7 +145,7 @@ module digital_safe_sys_tb;
     task pw_endset_pulse;
         begin
             pw_endset = 1;
-            #40000000;
+            #51000000; // 51ms 동안 신호 유지
             pw_endset = 0;
         end
     endtask
@@ -162,7 +153,7 @@ module digital_safe_sys_tb;
     task ok_pulse;
         begin
             ok = 1;
-            #40000000;
+            #51000000; // 51ms 동안 신호 유지
             ok = 0;
         end
     endtask
@@ -171,7 +162,7 @@ module digital_safe_sys_tb;
     task place_pulse;
         begin
             place = 1;
-            #40000000;
+            #51000000; // 51ms 동안 신호 유지
             place = 0;
         end
     endtask
